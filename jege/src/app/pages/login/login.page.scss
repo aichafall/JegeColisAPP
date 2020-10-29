@@ -1,0 +1,147 @@
+:root {
+    --ion-font-family:  'PlayfairDisplay'!important;
+    font-family:  'PlayfairDisplay' !important;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-family:  'PlayfairDisplay'
+  }
+
+  img{
+    height: auto;
+    width: auto;
+    margin: auto;
+    display: block;
+    align-items: center;
+}
+
+.centre {
+  text-align: center;
+}
+
+ion-card {
+  border-radius:30px !important;
+  border-color:#135A30 !important;
+  }
+
+ion-button {
+  border-color:#135A30 !important;
+  }
+
+  img {
+    
+    height:215px;
+    width:215px;
+
+    }
+
+    ion-slides.slides{
+      border-radius: 10px;
+      margin-top: -65px;
+      --bullet-background: black !important;
+    }
+    .segmentTextBtn{
+      color: white;
+    }
+    
+    /*swipe slider*/
+    /*swipe segment design*/
+    
+    .itemSlider{
+      --inner-border-width:0;
+      --min-height: 74px;
+      --inner-padding-end:15px;
+      margin-top: -1px;
+    }
+    
+   
+
+    ion-icon.checkmark{
+      margin-left: auto;
+      margin-right: auto;
+      color: #034460;
+    }
+    .rowtag{
+      margin-top: 30px;
+    }
+    /*tag card design*/
+  .contentClass{
+      --background: #eee;
+    }
+    .card{
+      border-radius: 10px;
+      margin: 15px 0 0 0;
+    }
+    .imgBgTag{
+      width: 100%;
+    }
+    .card-title {
+      position: absolute;
+        top: 50px;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+    }
+    .tagRow{
+      margin-top: -100px;
+    }
+    .rowComp{
+      margin-top: -25px;
+    }
+    .tagCard{
+      background: white;
+      border-radius:8px;
+      text-align: center;
+      padding: 15px;
+      margin: 0;
+    }
+    .paraTagCard{
+      font-size: 13px;
+      margin-bottom: 0%;
+      margin-top: 0%;
+      text-align: center;
+      font-weight: bold;
+    }
+    .col2Tag{
+      margin-left: -10%;
+      z-index: 10;
+      margin-top: 25px;
+    }
+    .col3Tag{
+      margin-left: -10%;
+    }
+    .nextBtn, .prevBtn{
+      width:30px;
+      height: 40px;
+      background-color: gray;
+      font-size: 15px;
+      border-radius: 0;
+      top: 39%;
+      background-size: 14px 44px;
+    }
+    .nextBtn{
+      right: 13px;
+    }
+    .prevBtn{
+      left: -2px;
+    }
+    .themeBg{
+      height: 100%;
+      width: 100%;
+      top: 0;
+      position: absolute;
+      opacity: 0.55;
+    }
+    .themeBgDisable{
+      height: 100%;
+      width: 100%;
+      top: 0;
+      position: absolute;
+      opacity: 0.7;
+    }
+    .themeImg, .uiImg{
+      opacity: 0.7;
+    }

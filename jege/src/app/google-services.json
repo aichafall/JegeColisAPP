@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "989233870375",
+    "firebase_url": "https://jegecolis.firebaseio.com",
+    "project_id": "jegecolis",
+    "storage_bucket": "jegecolis.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:989233870375:android:df931ce7c0444f42eec002",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "989233870375-c1t884hr2t1gd2vlhi6a194je274h2bk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe6iqfWW6LUWmKokpR2vD-Acik5txYuJE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "989233870375-c1t884hr2t1gd2vlhi6a194je274h2bk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

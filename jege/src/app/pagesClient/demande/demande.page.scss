@@ -1,0 +1,36 @@
+ion-content{
+height:100%;
+}
+p {
+    font-size: 0.8em;
+    color: #d2d2d2;
+}
+
+ion-slides {
+	height: 100%;
+}
+
+ion-slide {
+    img{width:305px;
+        height:305px}
+    display: block;
+}
+
+
+ion-label, .select-text {
+    margin-left: 10px;
+}
+
+.invalid {
+    border: 1px solid #ea6153;
+}
+ion-fab { top:87%;}
+
+ion-button{        width: 50%;
+    margin-left: -0.02em;
+    margin-top: 0.7em;
+    align-items: center;
+    border-radius: 10px;}
+p{font-weight:bold;}
+
+

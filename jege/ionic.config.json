@@ -1,0 +1,7 @@
+{
+  "name": "jegeApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

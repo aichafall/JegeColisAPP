@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    
+      <ion-icon size="large" routerLink="/home" color="light" name="arrow-back"></ion-icon>
+  
+    <ion-title>Reception</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-button color="secondary" (click)="retrait()" expand="block"> Faire un retrait
+  </ion-button>
+
+
+  <ion-grid>
+    
+    <ion-row>
+      <ion-col>
+        <div>Reference</div>
+      </ion-col>
+      <ion-col>
+        <div>Nom Expediteur</div>
+      </ion-col>
+      <ion-col>
+        <div>Prenom Expediteur</div>
+      </ion-col>
+      <ion-col>
+        <div>Tel Expediteur</div>
+      </ion-col>
+      <ion-col>
+        <div>Nom Destinataire</div>
+      </ion-col>
+      <ion-col>
+        <div>Prenom Destinataire</div>
+      </ion-col>
+      <ion-col>
+        <div>Tel Destinataire</div>
+      </ion-col>
+      <ion-col>
+        <div>Etat Colis</div>
+      </ion-col>
+      <ion-col>
+        <div>Action</div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div>352235085395</div>
+      </ion-col>
+      <ion-col col-6="">
+        <div>Ndiaye</div>
+      </ion-col>
+      <ion-col>
+        <div>Djiby</div>
+      </ion-col>
+      <ion-col>
+        <div>777777777</div>
+      </ion-col>
+      <ion-col>
+        <div>Cisse</div>
+      </ion-col>
+      <ion-col>
+        <div>Samba</div>
+      </ion-col>
+      <ion-col>
+        <div>789990989</div>
+      </ion-col>
+      <ion-col>
+        <div>Retiré</div>
+      </ion-col>
+      <ion-col>
+        <div>-</div>
+      </ion-col>
+    </ion-row>
+   
+    
+  </ion-grid>
+
+
+
+  <!--
+  <div class="ion-padding">
+
+     Theme classes dark, material, bootstrap 
+    <ngx-datatable 
+      class="material"
+      [limit]="8" 
+      [rows]="rows" 
+      [rowHeight]="50" 
+      [columns]="columns"
+      [columnMode]="'force'" 
+      [sortType]="'multi'" 
+      [headerHeight]="50" 
+      [footerHeight]="50">
+    </ngx-datatable>
+
+  </div>  -->
+
+</ion-content>

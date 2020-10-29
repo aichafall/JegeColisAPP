@@ -1,0 +1,31 @@
+
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-icon routerLink="/homeclient" side="start" color="light" size="large" name="arrow-back"></ion-icon>
+      <ion-title>
+        Mes colis 
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+<body>   
+  <div class="content">
+   
+    <div *ngFor="let item of colissData" class="transactions">
+      <div routerLink='/detail/{{item.id}}' class="transaction" >
+        <div class="t-icon-container">
+          <ion-icon color="primary" size="large" name="cube"></ion-icon>
+        </div>
+        <div class="t-details">
+          <div class="t-title">Référence: {{ item.id }}</div>
+          <div class="t-time">14/10/2020
+          </div>
+        </div>
+        <div class="t-amount">{{ item.statut }}
+        </div>
+      </div>
+    </div>
+  </div>
+</body>  
+</ion-content>

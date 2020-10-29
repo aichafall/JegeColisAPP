@@ -1,0 +1,60 @@
+{
+  "colis": [
+    {
+      "id": "JC001",
+      "nature": "Alimentaire",
+      "expediteur": "771234567",
+      "adresseexpediteur": "Yoff",
+      "nomdestinataire": "Aicha Fall",
+      "adressedestinataire": "Ouakam",
+      "destinataire": "709876543",
+      "statut": "livré",
+      "nomlivreur": "Mohamed Faye",
+      "livreur": "782344332",
+      "ptrelaissource": "",
+      "ptrelaisdestination": ""
+    },
+    {
+      "id": "JC002",
+      "nature": "Documents",
+      "expediteur": "774563211",
+      "adresseexpediteur": "Sacre coeur",
+      "nomdestinataire": "Sokhna Dia",
+      "adressedestinataire": "Almadies",
+      "destinataire": "708574677",
+      "statut": "En attente",
+      "nomlivreur": "Moustapha Ly",
+      "livreur": "782344332",
+      "ptrelaissource": "",
+      "ptrelaisdestination": ""
+    },
+    {
+      "id": "JC003",
+      "nature": "Paquets",
+      "expediteur": "777554466",
+      "adresseexpediteur": "Fann",
+      "nomdestinataire": "Adja Dime",
+      "adressedestinataire": "Parcelles",
+      "destinataire": "704328900",
+      "statut": "livré",
+      "nomlivreur": "Helene Thiam",
+      "livreur": "787654321",
+      "ptrelaissource": "",
+      "ptrelaisdestination": ""
+    },
+    {
+     "id": "JC004",
+      "nature": "Documents",
+      "expediteur": "771234567",
+      "adresseexpediteur": "Djeuppeul",
+      "nomdestinataire": "Ramatoulaye Tine",
+      "adressedestinataire": "",
+      "destinataire": "709876543",
+      "statut": "accepté",
+      "nomlivreur": "Mohamed Faye",
+      "livreur": "782344332",
+      "ptrelaissource": "",
+      "ptrelaisdestination": "Jege Foire"
+    }
+  ]
+}

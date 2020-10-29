@@ -1,0 +1,81 @@
+
+
+<ion-content class="ion-padding">
+
+  <div class="container">
+    <div id="logo">
+      <img src="assets/img/logo.jpg" />
+    </div>
+    <div class="main">
+     
+      
+      <h1>Référence: {{ colis.id }} </h1>
+  <!--     <h2>Thank you for riding with lyft!</h2> -->
+      <p>(14 Octobre, 2020  5:21)</p>
+    </div>
+    <div class="location">
+      <!-- <img class="map" src="https://image.ibb.co/iVkNEJ/lyft.png" /> -->
+      <div class="location__line"></div>
+      <div class="dot pickup">
+        <div class="inner"></div>
+      </div>
+      <div class="location__pickup">
+        <h3>Adresse de l'expéditeur</h3>
+        <p>{{colis.adresseexpediteur}} <br>Dakar, Sénégal</p>
+      </div>
+      <div class="dot dropoff"><div class="inner"></div></div>
+      <div class="location__dropoff">
+        <h3>Adresse du destinataire</h3>
+        <p>{{colis.adressedestinataire}} <br>Dakar, Sénégal</p>
+      </div>
+    </div>
+    
+    <h2 class="receipt__title"> Détails</h2>
+    <div class="receipt">
+      <div class="receipt__grid1">
+        <p>Nature</p>
+        <p>Le destinataire du colis</p>
+        <p>Contact du destinataire</p>
+        <p>Votre livreur</p>
+        <p>Contact du livreur </p>
+        
+      </div>
+      <div class="receipt__grid2">
+        
+        <p>{{ colis.nature }}</p>
+         <p>{{ colis.nomdestinataire }}</p>
+        <p>{{ colis.destinataire }}</p>
+        <p>{{ colis.nomlivreur }}</p>
+        <p>{{ colis.livreur }}</p>
+      </div>
+    </div>
+    <div class="receipt__line"></div>
+    <ion-fab routerLink="/livraison"  vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button color="primary">
+        <ion-icon color="light" name="arrow-back"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    </div>
+    
+
+  
+  
+
+  <!-- <ion-item>
+    <ion-label>Nature</ion-label>
+    <ion-label>{{ colis.nature }}</ion-label>
+   
+  </ion-item>
+  <ion-item>
+    <ion-label>Expediteur</ion-label>
+    <ion-input [(ngModel)]="colis.expediteur" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Destinataire</ion-label>
+    <ion-input [(ngModel)]="colis.destinataire" ></ion-input>
+  </ion-item>
+  
+  <ion-button [routerLink]="[ '/homeclient']" color="danger" size="small">
+    Cancel
+  </ion-button> -->
+</ion-content>

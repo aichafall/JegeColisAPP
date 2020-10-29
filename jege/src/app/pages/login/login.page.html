@@ -1,0 +1,91 @@
+<ion-content padding class="background" [fullscreen]="true">
+
+  <div class="page-centered-element">
+    <div class="fadeIn">
+      <img src="assets/img/logo.jpg">
+    </div> 
+  </div>
+
+  <ion-row>
+    <ion-col>
+      
+          
+<!-- SLIDES-->
+<ion-row no-padding>
+  <ion-col no-padding>
+    <ion-item style='--background:var(--my-var)' class="itemSlider">
+      <ion-slides class="slides" #IonSlides loop="true">
+        <ion-slide *ngFor="let slide of slides; let i=index"  no-padding>
+           
+              <ion-text  color="primary">
+                 <h1>{{slide.image}}</h1>
+              </ion-text>
+          
+        </ion-slide>
+      </ion-slides>
+    </ion-item>
+  </ion-col>
+</ion-row>
+
+
+        
+
+      <ion-card>
+ 
+          <ion-card-content>
+
+            <form class="form" [formGroup]="validations_form" (ngSubmit)="loginUser(validations_form.value)">
+
+              <!--EMAIL-->
+                     <ion-item>
+                       
+                       <ion-input type="email" placeholder="Email ou Numéro de téléphone" formControlName="email"></ion-input>
+                     </ion-item>
+                     
+                <div class="validation-errors">
+                 <ng-container *ngFor="let validation of validation_messages.email">
+                   <div class="error-message"
+                     *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+                     {{ validation.message }}
+                   </div> <!-- Messages d'erreur obligatoire ou sur la validité-->
+                 </ng-container>
+                </div>
+            
+               <!--PASSWORD-->
+                     <ion-item>
+                       
+                       <ion-input type="password" placeholder="Mot de passe" formControlName="password" class="form-controll" required >
+                       </ion-input>
+                       <ion-text routerLink="/resetpwd" color="secondary"> <p> Mot de passe oublié?</p>  </ion-text>
+                     </ion-item>
+           
+                 <div class="validation-errors">
+                  <ng-container *ngFor="let validation of validation_messages.password">
+                    <div class="error-message"
+                      *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                 </div>
+               
+                   <!--VALIDER-->
+      <div class="centre"> 
+        <ion-button expand="block" size="large" class="submit-btn" type="submit" [disabled]="!validations_form.valid">Se connecter</ion-button>
+        <!-- <ion-button expand="block" size="large" routerLink="/register">Créer un compte</ion-button> -->
+        <p> Vous n'avez pas de compte?</p> 
+        <ion-text routerLink="/register" color="secondary"> <p> Créez en un.</p>  </ion-text>
+       </div>
+
+             </form>
+
+             <!-- <label class="error-message">{{errorMessage}}</label>    -->
+            
+          </ion-card-content>
+
+      </ion-card>
+   
+ 
+    </ion-col>
+  </ion-row>
+  
+</ion-content>

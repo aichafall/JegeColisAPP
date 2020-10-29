@@ -1,0 +1,72 @@
+
+
+<ion-content>  
+
+  <div class="border">
+  <div class="time"><h1>Modifier mon profil </h1>
+  
+  </div>
+  <div class="temp">
+<!--     photo profil -->
+    
+          <img src="https://pbs.twimg.com/profile_images/834493671785525249/XdLjsJX_.jpg" class="user-photo">
+        
+  </div>
+</div>
+  <div class="middle">
+    
+    <div class="timeline">
+      <ul>
+        <li>
+          <div class="hour">
+            <ion-icon color="primary" name="person"></ion-icon>
+          </div>
+          <div class="work">
+            <span>Prenom et nom</span><br />
+            <ion-input id="sub" [(ngModel)]="usernom" placeholder="Entrer votre mail"></ion-input>
+          </div>
+        </li>
+        <li>
+          <div class="hour">
+            <ion-icon color="primary" name="call"></ion-icon>
+          </div>
+          <div class="work">
+            <span>Numero de telephone</span><br />
+            <!-- EXEMPLE à FAIRE PARTOUT -->
+            <ion-input id="sub" [(ngModel)]="usernum" placeholder="Entrer votre mail"></ion-input>
+          </div>
+        </li>
+        <li>
+          <div class="hour">
+            <ion-icon color="primary" name="mail"></ion-icon>
+          </div>
+          <div class="work">
+            <span>E-mail</span><br />
+            <ion-input id="sub" [(ngModel)]="useremail" placeholder="Entrer votre mail"></ion-input>
+          </div>
+        </li>
+        <li>
+          <div class="hour">
+            <ion-icon color="primary" name="home"></ion-icon>
+          </div>
+          <div class="work">
+            <span>Adresse</span><br />
+            <ion-input id="sub" [(ngModel)]="useradresse" placeholder="Entrer votre mail"></ion-input>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom">
+    
+    <ion-fab (click)="presentToast()" vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button color="primary">
+        <ion-icon color="light" name="checkmark"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <!-- <button id="done"><i class="fa fa-check" aria-hidden="true"></i></button>
+    <button id="edit"><i class="fa fa-pencil" aria-hidden="true"></i></button> -->
+    
+  </div>
+
+</ion-content>

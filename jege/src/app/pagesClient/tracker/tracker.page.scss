@@ -1,0 +1,166 @@
+// COMPASS
+//@import "compass";
+// FONT
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700");
+
+// CONFIG
+$SPACER_XS: 0.5rem;
+$SPACER_SM: 0.75rem;
+$SPACER: 1rem;
+$SPACER_MD: 1.5rem;
+$SPACER_LG: 2rem;
+$BORDER_RADIUS: 3px;
+$PROGRESS_HEIGHT: 600px;
+$PROGRESS_LIST_HEIGHT: 75px;
+$PROGRESS_COUNTER_WIDTH: 26px;
+$LIST_ITEM_WIDTH: 100px;
+$PROGRESS_BG: #135A30;
+$BODY_BG: #fff;
+$ICON_COLOR: #F3597D;
+
+// BASE
+ion-content {
+  font-size: 13px;
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  line-height: 13px;
+  -webkit-font-smoothing: auto;
+  text-rendering: optimizeLegibility;
+  color: #fff;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:$BODY_BG;
+  letter-spacing: 0.6px;
+
+}
+
+p {
+  font-size: 13px;
+  margin: 0 0 11px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header {
+  
+    height: 210px;
+  text-align: center;
+  margin-bottom: 0;
+  img {width: 40%;
+    height: 140px;}
+  h1 {
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    color:#135A30;
+  }
+  p {
+    margin-top: $SPACER;
+    color:#135A30;
+  }
+  .icon {
+    color: $ICON_COLOR; 
+  }
+}
+
+// THE GOOD STUFF
+.progressContainer {
+  position: relative;
+  width: 300px;
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: $SPACER_LG;
+  color: #135A30 ;
+  background: $PROGRESS_BG;
+ // @include box-shadow(0 0 15px rgba(0, 0, 0, 0.3));
+}
+
+.progress {
+  position: relative;
+  padding: 0 $SPACER 0 3.5rem;
+  margin: -15rem 0 0;
+  list-style: none;
+}
+
+.progress__item {
+  position: relative;
+  min-height: $PROGRESS_LIST_HEIGHT;
+  counter-increment: list;
+  padding-left: $SPACER_XS;
+  &:before {
+    content: "";
+    position: absolute;
+    left: -1.5rem;
+    top: 29px;
+    height: 60%;
+    width: 1px;
+    border-left: 2px solid #135A30 ;
+  }
+  &:after {
+    content: counter(list);
+    position: absolute;
+    top: 0;
+    left: -2.35rem;
+    width: $PROGRESS_COUNTER_WIDTH;
+    height: $PROGRESS_COUNTER_WIDTH;
+    border-radius: 50%;
+    background: transparent;
+    color: #135A30 ;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 2rem;
+    text-align: center;
+    border: 1px solid #135A30 ;
+  }
+  //Hide border for Last Step
+  &:last-child {
+    &:before {
+      border: none;
+    }
+  }
+  //UNCompleted
+  &.progress__item--uncompleted {
+    opacity: 0.7;
+    
+    
+  }
+  //Completed
+  &.progress__item--completed {
+    opacity: 0.6;
+    color: #135A30 ;
+    &:after {
+      content: "\2713";
+      font-weight: 400;
+      background: #135A30 ;
+      color: #fff;
+    }
+  }
+  //Active
+  &.progress__item--active {
+      
+    color: #135A30 ;
+    &:after {
+      background: #135A30 ;
+      color: #fff;
+      
+    }
+  }
+}
+
+.progress__title {
+  padding: 0.4rem 0 $SPACER_XS;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.progress__info {
+  font-size: 13px;
+}

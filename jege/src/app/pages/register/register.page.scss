@@ -1,0 +1,31 @@
+:root {
+    --ion-font-family:  'PlayfairDisplay'!important;
+    font-family:  'PlayfairDisplay' !important;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+
+  img{
+    height: 95px;
+    width: 95px;
+    margin: auto;
+    display: block;
+    align-items: center;
+}
+
+.centre {
+  text-align: center;
+}
+
+ion-card {
+  border-radius:30px !important;
+  border-color:#135A30 !important;
+  }
+
+ion-button {
+  border-color:#135A30 !important;
+  }
+
+  

@@ -1,0 +1,18 @@
+{
+    "colis": [
+        {
+            "reference": "352235085395",
+	    "NomExpediteur": "Ndiaye",
+            "PrenomExpediteur": "Djiby",
+	    "TelExpediteur": "778188786",
+            "NomDestinataire": "Cissé",
+            "PrenomDestinataire": "Samba",
+	    "TelDestinataire": "772682536",
+	    "EtatColis": "Retiré",
+	    "Actions": "edit",
+	    
+        },
+       
+    ]
+}
+

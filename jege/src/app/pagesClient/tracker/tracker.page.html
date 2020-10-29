@@ -1,0 +1,40 @@
+<!-- <ion-header> 
+  <ion-title>Tracker</ion-title>
+</ion-header> -->
+<ion-content>
+  <ion-icon routerLink="/homeclient" color="primary" size="large" name="close-outline"></ion-icon>
+  <header>
+    
+    <!-- <ion-icon size="large" routerLink="/homeclient" color="primary" name="arrow-forward"></ion-icon> -->
+    <h1>Tracker votre colis</h1>
+    <p>Référence: JC002 </p>
+    <img src="assets/img/carte.png">
+  </header>
+  <body>
+    
+    <ul class="progress">
+      <li class="progress__item progress__item--completed">
+        <p class="progress__title">En cours...</p>
+        <p class="progress__info">Votre demande est en cours de traitement.</p>
+      </li>
+      <li class="progress__item progress__item--active">
+        <p class="progress__title">Accepté</p>
+        <p class="progress__info">Un livreur a accepté de livrer votre colis.</p>
+      </li>
+      <li class="progress__item progress__item--uncompleted">
+        <p class="progress__title">Récupéré</p>
+        <p class="progress__info">Le livreur a récupéré le colis chez l'expéditeur.</p>
+      </li>
+      <li class="progress__item progress__item--uncompleted">
+        <p class="progress__title">En route</p>
+        <p class="progress__info">Le livreur est en route vers le destinataire du colis.</p>
+      </li>
+      <li class="progress__item progress__item--uncompleted">
+        <p class="progress__title">Livré</p>
+        <p class="progress__info">Votre colis est arrivé à destination.</p>
+      </li>
+    </ul>
+    
+  </body>
+  
+</ion-content>
