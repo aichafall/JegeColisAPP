@@ -96,10 +96,13 @@ export class LoginPage implements OnInit {
         }
 
         this.navCtrl.navigateForward('/homeclient');
-        
-        window.localStorage.setItem('userid',res.user._id);
-        window.localStorage.setItem('token',res.token);
-        window.localStorage.setItem('useremail',res.user.email);
+        window.localStorage.setItem('userid',res.userId);
+        window.localStorage.setItem('userprenom',res.userprenom);
+        window.localStorage.setItem('usernom',res.usernom);
+        window.localStorage.setItem('useradresse',res.useradresse);
+        window.localStorage.setItem('useremail',res.useremail);
+        window.localStorage.setItem('usertel',res.usertel);
+       
       }, async err => {
         this.errorMessage = err.message;
         

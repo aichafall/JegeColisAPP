@@ -10,9 +10,9 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class DetailPage implements OnInit {
 
-  id: number;
+  id: string;
   colis: Colis;
-
+ref: string;
   constructor(
     public activatedRoute: ActivatedRoute,
     public router: Router,
@@ -25,16 +25,14 @@ export class DetailPage implements OnInit {
     this.id = this.activatedRoute.snapshot.params["id"];
     //get item details using id
     this.apiService.getItem(this.id).subscribe(response => {
-      console.log(response);
+      console.log(this.id);
+       this.ref = this.id.substr(this.id.length - 5);
+      console.log(this.ref);
       this.colis = response;
+      console.log(this.colis);
     })
   }
 
-  update() {
-    //Update item by taking id and updated colis object
-    this.apiService.updateItem(this.id, this.colis).subscribe(response => {
-      // this.router.navigate(['student-list']);
-    })
-  }
+  
 
 }

@@ -12,9 +12,9 @@ const colisSchema = mongoose.Schema({
       adressedestinataire: { type: String },
       ptrelaissource: { type: String },
       ptrelaisdestination: { type: String},
-      nomlivreur: { type: String, required: true },
-      livreur: { type: Number, required: true },
-      statut: { type: String, required: true },
+      nomlivreur: { type: String, default:'en attente' },
+      livreur: { type: Number, default:'en attente'},
+      statut: { type: String, default:'en attente' },
 });
 
 module.exports = mongoose.model('Colis', colisSchema);

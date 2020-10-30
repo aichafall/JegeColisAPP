@@ -13,12 +13,12 @@
   <div class="content">
    
     <div *ngFor="let item of colissData" class="transactions">
-      <div routerLink='/detail/{{item.id}}' class="transaction" >
+      <div routerLink='/detail/{{item._id}}' class="transaction" >
         <div class="t-icon-container">
           <ion-icon color="primary" size="large" name="cube"></ion-icon>
         </div>
         <div class="t-details">
-          <div class="t-title">Référence: {{ item.id }}</div>
+          <div class="t-title">Référence: JC{{ item._id.slice(-5) }}</div>
           <div class="t-time">14/10/2020
           </div>
         </div>

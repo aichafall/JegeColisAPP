@@ -28,7 +28,11 @@ export class ProfilclientPage implements OnInit {
     //   console.log(response);
     //   this.user = response;
     // })
+   
   }
-
-  useremail= window.localStorage.getItem('useremail');
+  prenom= window.localStorage.getItem('userprenom');
+  nom= window.localStorage.getItem('usernom');
+  email= window.localStorage.getItem('useremail');
+  adresse= window.localStorage.getItem('useradresse');
+  telephone= window.localStorage.getItem('usertel');
 }

@@ -1,4 +1,4 @@
-const Colis = require('../models/colis');
+const Colis = require('../models/Colis');
 
 exports.createColis = (req, res, next) => {
   const colis = new Colis({

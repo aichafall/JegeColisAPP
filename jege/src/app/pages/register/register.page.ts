@@ -30,6 +30,12 @@ export class RegisterPage implements OnInit {
       prenom: new FormControl('', Validators.compose([
         Validators.required, // prenom obligatoire
       ])),
+      nom: new FormControl('', Validators.compose([
+        Validators.required, // prenom obligatoire
+      ])),
+      adresse: new FormControl('', Validators.compose([
+        Validators.required, // prenom obligatoire
+      ])),
       telephone: new FormControl('', Validators.compose([
         Validators.required, // numero obligatoire
       ])),
@@ -66,7 +72,7 @@ export class RegisterPage implements OnInit {
       .subscribe(res => {
         console.log(res);
         this.errorMessage = "";
-        this.navCtrl.navigateForward('/home');  
+        this.navCtrl.navigateForward('/homeclient');  
       }, async err => {
         this.errorMessage = err.message;
       })

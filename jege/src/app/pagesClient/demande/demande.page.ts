@@ -42,7 +42,7 @@ export class DemandePage implements OnInit {
 
     //SLIDE 1
     this.validations_form1 = this.formBuilder.group({
-      colis: ['', Validators.required],
+      nature: ['', Validators.required],
       quantite: ['', Validators.required],
       paiement: ['', Validators.required],
   });
@@ -50,16 +50,16 @@ export class DemandePage implements OnInit {
  
  //SLIDE 2
  this.validations_form2 = this.formBuilder.group({
-  nom: new FormControl('', Validators.compose([
+  nomexpediteur: new FormControl('', Validators.compose([
     Validators.required, // nom obligatoire
     Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'),
   ])),
-  adresse: new FormControl('', Validators.compose([
+  adresseexpediteur: new FormControl('', Validators.compose([
     
     Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'),
   ])),
-  relais: [''],
-  telephone: new FormControl('', Validators.compose([
+  ptrelaissource: [''],
+  expediteur: new FormControl('', Validators.compose([
     Validators.minLength(9),
     Validators.required, // nom obligatoire
   ])),
@@ -67,16 +67,16 @@ export class DemandePage implements OnInit {
 
 //SLIDE 3
  this.validations_form3 = this.formBuilder.group({
-  nom1: new FormControl('', Validators.compose([
+  nomdestinataire: new FormControl('', Validators.compose([
     Validators.required, // nom obligatoire
     Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'),
   ])),
-  adresse1: new FormControl('', Validators.compose([
+  adressedestinataire: new FormControl('', Validators.compose([
     
     Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'),
   ])),
-  relais2: [''],
-  telephone1: new FormControl('', Validators.compose([
+  ptrelaisdestination: [''],
+  destinataire: new FormControl('', Validators.compose([
     Validators.minLength(9),
     Validators.maxLength(9),
     Validators.required, // nom obligatoire
@@ -86,7 +86,7 @@ export class DemandePage implements OnInit {
   }
 
   validation_messages = {
-    'colis': [
+    'nature': [
       { type: 'required', message: 'Nature du colis obligatoire.' },
     ],
     'quantite': [
@@ -95,28 +95,28 @@ export class DemandePage implements OnInit {
     'paiement': [
       { type: 'required', message: 'Nature du paiement obligatoire.' },
     ],
-    'nom': [
+    'nomexpediteur': [
       { type: 'required', message: 'Identité de lexpéditeur obligatoire.' },
       { type: 'pattern', message: 'Nom trop long' }
     ],
-    'adresse': [
+    'adresseexpediteur': [
       { type: 'maxlength', message: 'Adresse trop longue' },
       { type: 'pattern', message: 'Adresse non valide' }
     ],
-    'telephone': [
+    'expediteur': [
       { type: 'maxlength', message: 'Numéro de téléphone trop long' },
       { type: 'minlength', message: 'Numéro de téléphone trop court' },
       { type: 'required', message: 'Numéro de téléphone obligatoire.' },
     ],
-    'nom1': [
+    'nomdestinataire': [
       { type: 'required', message: 'Identité de lexpéditeur obligatoire.' },
       { type: 'pattern', message: 'Nom trop long' }
     ],
-    'adresse1': [
+    'adressedestinataire': [
       { type: 'maxlength', message: 'Adresse trop longue' },
       { type: 'pattern', message: 'Adresse non valide' }
     ],
-    'telephone1': [
+    'destinataire': [
       { type: 'maxlength', message: 'Numéro de téléphone trop long' },
       { type: 'minlength', message: 'Numéro de téléphone trop court' },
       { type: 'required', message: 'Numéro de téléphone obligatoire.' },
@@ -158,27 +158,35 @@ async presentAlertConfirm() {
   if(!this.validations_form1.valid){
       this.signupSlider.slideTo(0);
   } 
-  else if(!this.validations_form2.value.telephone && !this.validations_form2.value.nom ){
+  else if(!this.validations_form2.value.expediteur && !this.validations_form2.value.nomexpediteur ){
       this.signupSlider.slideTo(1);
   }
-  else if(!this.validations_form3.value.telephone1 && !this.validations_form3.value.nom1){
+  else if(!this.validations_form3.value.destinataire && !this.validations_form3.value.nomdestinataire){
     this.signupSlider.slideTo(2);
 }
   else {
     
       console.log("success!") 
  
-          this.colis.nature = this.validations_form1.value.colis;
-    this.colis.expediteur = this.validations_form2.value.telephone ;
-    this.colis.destinataire = this.validations_form3.value.telephone1 ;
-    this.colis.ptrelaissource = this.validations_form2.value.relais;
-    this.colis.ptrelaisdestination = this.validations_form3.value.relais2;
+          this.colis.nature = this.validations_form1.value.nature;
+          this.colis.quantite = this.validations_form1.value.quantite;
+          this.colis.paiement = this.validations_form1.value.paiement;
+      this.colis.nomexpediteur = this.validations_form2.value.nomexpediteur ;
+      this.colis.adresseexpediteur = this.validations_form2.value.adresseexpediteur ;
+      this.colis.expediteur = this.validations_form2.value.expediteur ;
+    this.colis.nomdestinataire = this.validations_form3.value.nomdestinataire ;
+    this.colis.adressedestinataire = this.validations_form3.value.adressedestinataire ;
+    this.colis.destinataire = this.validations_form3.value.destinataire ;
+
+    this.colis.ptrelaissource = this.validations_form2.value.ptrelaissource;
+    this.colis.ptrelaisdestination = this.validations_form3.value.ptrelaisdestination;
+    console.log(this.colis);
     // console.log(this.colis.nature);
     // console.log(this.colis.expediteur);
     // console.log(this.colis.destinataire);
     this.apiService.createItem(this.colis).subscribe((response) => {
       console.log("inséré!");
-      console.log(this.colis);
+      // console.log(this.colis);
       this.navCtrl.navigateForward('/bravo');
     });  }
 

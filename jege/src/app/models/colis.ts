@@ -1,11 +1,18 @@
 export class Colis {
-    id: number;
+    id: string;
     nature: string;
-    expediteur: number;
+    quantite: string;
+    paiement: string;
+    nomexpediteur: string;
+    expediteur: string;
+    adresseexpediteur: number;
+    nomdestinataire: string;
     destinataire: number;
-    statut: string;
+    adressedestinataire: string;
     ptrelaissource: string;
     ptrelaisdestination: string;
+    nomlivreur: string;
     livreur: number;
+    statut: string;
     
 }

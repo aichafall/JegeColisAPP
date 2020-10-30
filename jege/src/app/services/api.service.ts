@@ -12,8 +12,8 @@ import { retry, catchError } from 'rxjs/operators';
 export class ApiService {
 
   // API path
-  //base_path = 'http://localhost:3000/colis';
-  base_path = 'https://my-json-server.typicode.com/aichafall/colis/colis';
+  base_path = 'https://jegeback.herokuapp.com/api/colis';
+  // base_path = 'https://my-json-server.typicode.com/aichafall/colis/colis';
  
 
   constructor(private http: HttpClient) { }

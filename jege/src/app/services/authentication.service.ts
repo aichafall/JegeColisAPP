@@ -22,6 +22,10 @@ export class AuthenticationService {
   RegisterUser(user: User): Observable<any> {
     return this.http.post(URL+ '/register', user).pipe();
   }
+  
+  UpdateUser(_id,user: User): Observable<any> {
+    return this.http.put(URL+ '/modifprofil'+ '/' + _id, user).pipe();
+  }
 
   userDetails() {
     return this.http.get(URL+ "/login").pipe();

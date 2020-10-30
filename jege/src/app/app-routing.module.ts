@@ -86,6 +86,10 @@ const routes: Routes = [
     path: 'itineraire',
     loadChildren: () => import('./pageClient/itineraire/itineraire.module').then( m => m.ItinerairePageModule)
   },
+  {
+    path: 'trackerattente',
+    loadChildren: () => import('./pageClient/trackerattente/trackerattente.module').then( m => m.TrackerattentePageModule)
+  },
 
 
 

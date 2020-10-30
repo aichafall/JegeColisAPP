@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 // import { User } from 'src/app/models/user';
 import { ApiService } from 'src/app/services/api.service';
 import { ToastController,AlertController } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-modifprofil',
@@ -15,20 +16,32 @@ export class ModifprofilPage implements OnInit {
   // user: User;
   // <!-- EXEMPLE à FAIRE PARTOUT -->
   useremail= window.localStorage.getItem('useremail');
-  usernom="Aicha FALL";
-  useradresse="Yoff";
-  usernum="776554322";
+  // usernom="Aicha FALL";
+  // useradresse="Yoff";
+  // usernum="776554322";
   // usernom= window.localStorage.getItem('useremail');
   constructor(
     public toastController: ToastController,
     public activatedRoute: ActivatedRoute,
+    private authService: AuthenticationService,
     public router: Router,
     public apiService: ApiService
   ) {
   //   this.user = new User();
   }
+  prenom= window.localStorage.getItem('userprenom');
+  nom= window.localStorage.getItem('usernom');
+  email= window.localStorage.getItem('useremail');
+  adresse= window.localStorage.getItem('useradresse');
+  telephone= window.localStorage.getItem('usertel');
+  userid= window.localStorage.getItem('userid');
+  async presentToast(userid,value) {
+    this.authService.UpdateUser(userid,value)
+      .subscribe(res => {
+        console.log(res);
+        console.log("modifié");
+      })
 
-  async presentToast() {
     const toast = await this.toastController.create({
       message: 'Vos informations ont été modifiées avec succès.',
       position: 'top',
@@ -40,20 +53,17 @@ export class ModifprofilPage implements OnInit {
   }
 
   ngOnInit() {
-    // this.id = this.activatedRoute.snapshot.params["id"];
-    // //get item details using id
-    // this.apiService.getUser(this.id).subscribe(response => {
-    //   console.log(response);
-    //   this.user = response;
-    // })
+    
   }
 
-  // update() {
-  //   this.router.navigate(['profilclient']);
-  //   //Update item by taking id and updated colis object
-  // //   this.apiService.updateUser(this.id, this.user).subscribe(response => {
-  // //      this.router.navigate(['profilclient']);
-  // //   })
-  //  }
+  // UpdateUser(userid,value) {
+  //   this.authService.UpdateUser(userid,value)
+  //     .subscribe(res => {
+  //       console.log(res);
+  //       window.localStorage.setItem('userid',res.user._id);
+  //       window.localStorage.setItem('token',res.token);
+  //       window.localStorage.setItem('useremail',res.user.email);
+  //     })
+  // }
 
 }

@@ -10,16 +10,16 @@
           <form [formGroup]="validations_form1" >
                     <ion-item>
                       <ion-label position="floating">Nature de votre colis?</ion-label>
-                      <ion-select formControlName="colis">
-                          <ion-select-option value="document" checked="true">Documents</ion-select-option>
-                          <ion-select-option value="alim">Produits alimentaires</ion-select-option>
-                          <ion-select-option value="paquet">Paquets et autres</ion-select-option>
+                      <ion-select formControlName="nature">
+                          <ion-select-option value="Document" checked="true">Documents</ion-select-option>
+                          <ion-select-option value="Alimentaire">Produits alimentaires</ion-select-option>
+                          <ion-select-option value="Paquet">Paquets et autres</ion-select-option>
                       </ion-select>
                   </ion-item>
                   <div class="validation-errors">
-                    <ng-container *ngFor="let validation of validation_messages.colis">
+                    <ng-container *ngFor="let validation of validation_messages.nature">
                       <div class="error-message" style="font-size: small;color: #ea6153;"
-                        *ngIf="validations_form1.get('colis').hasError(validation.type) && (validations_form1.get('colis').dirty || validations_form1.get('colis').touched)">
+                        *ngIf="validations_form1.get('nature').hasError(validation.type) && (validations_form1.get('nature').dirty || validations_form1.get('nature').touched)">
                         {{ validation.message }}
                       </div>
                     </ng-container>
@@ -28,8 +28,8 @@
                   <ion-item>
                       <ion-label position="floating">Quantité</ion-label>
                       <ion-select formControlName="quantite">
-                          <ion-select-option value="un" checked="true">1</ion-select-option>
-                          <ion-select-option value="deux">2 ou plus</ion-select-option>
+                          <ion-select-option value="Un" checked="true">Un</ion-select-option>
+                          <ion-select-option value="Deux ou plusieurs">Deux ou plus</ion-select-option>
                       </ion-select>
                   </ion-item>
                   <div class="validation-errors">
@@ -44,8 +44,8 @@
                     <ion-item>
                       <ion-label position="floating">Paiement</ion-label>
                       <ion-select formControlName="paiement">
-                          <ion-select-option value="exp" checked="true">Par l'expéditeur</ion-select-option>
-                          <ion-select-option value="des">Par le destinataire</ion-select-option>
+                          <ion-select-option value="Expediteur" checked="true">Par l'expéditeur</ion-select-option>
+                          <ion-select-option value="Destinataire">Par le destinataire</ion-select-option>
                       </ion-select>
                     </ion-item>
                     <div class="validation-errors">
@@ -72,30 +72,30 @@
           <form [formGroup]="validations_form2" >
 
                   <ion-item>
-                    <ion-input type="text" placeholder="Prénom et nom de l'expéditeur" formControlName="nom" class="form-controll" required></ion-input>
+                    <ion-input type="text" placeholder="Prénom et nom de l'expéditeur" formControlName="nomexpediteur" class="form-controll" required></ion-input>
                   </ion-item>
                   <div class="validation-errors">
-                    <ng-container *ngFor="let validation of validation_messages.nom">
+                    <ng-container *ngFor="let validation of validation_messages.nomexpediteur">
                       <div class="error-message" style="font-size: small;color: #ea6153;"
-                        *ngIf="validations_form2.get('nom').hasError(validation.type) && (validations_form2.get('nom').dirty || validations_form2.get('nom').touched)">
+                        *ngIf="validations_form2.get('nomexpediteur').hasError(validation.type) && (validations_form2.get('nomexpediteur').dirty || validations_form2.get('nomexpediteur').touched)">
                         {{ validation.message }}
                       </div>
                     </ng-container>
                    </div>
 
                   <ion-item>
-                    <ion-input type="number" placeholder="Numéro de téléphone" formControlName="telephone" class="form-controll" required></ion-input>
+                    <ion-input type="number" placeholder="Numéro de téléphone" formControlName="expediteur" class="form-controll" required></ion-input>
                   </ion-item>
                   <div class="validation-errors">
-                    <ng-container *ngFor="let validation of validation_messages.telephone">
+                    <ng-container *ngFor="let validation of validation_messages.expediteur">
                       <div class="error-message" style="color: #ea6153;"
-                        *ngIf="validations_form2.get('telephone').hasError(validation.type) && (validations_form2.get('telephone').dirty || validations_form2.get('telephone').touched)">
+                        *ngIf="validations_form2.get('expediteur').hasError(validation.type) && (validations_form2.get('expediteur').dirty || validations_form2.get('expediteur').touched)">
                         {{ validation.message }}
                       </div>
                     </ng-container>
                    </div>
                   <ion-item>
-                    <ion-input type="text" placeholder="Adresse de l'expéditeur" formControlName="adresse" class="form-controll" required></ion-input>
+                    <ion-input type="text" placeholder="Adresse de l'expéditeur" formControlName="adresseexpediteur" class="form-controll" required></ion-input>
                   </ion-item>
                   <!-- <div class="validation-errors">
                     <ng-container *ngFor="let validation of validation_messages.adresse">
@@ -109,7 +109,7 @@
                   <p>OU</p>
                   <ion-item>
                     <ion-label position="floating">Expédier d'un point relais</ion-label>
-                    <ion-select formControlName="relais">
+                    <ion-select formControlName="ptrelaissource">
                         <ion-select-option value="foire" checked="true">JEGE Foire</ion-select-option>
                         <ion-select-option value="sacre">JEGE Sacré Coeur</ion-select-option>
                         <ion-select-option value="djeuppeul" checked="true">JEGE Djeuppeul</ion-select-option>
@@ -133,31 +133,31 @@
           <form [formGroup]="validations_form3" >
 
                   <ion-item>
-                    <ion-input type="text" placeholder="Prénom et nom du destinataire" formControlName="nom1" class="form-controll" required></ion-input>
+                    <ion-input type="text" placeholder="Prénom et nom du destinataire" formControlName="nomdestinataire" class="form-controll" required></ion-input>
                   </ion-item>
                   <div class="validation-errors">
-                    <ng-container *ngFor="let validation of validation_messages.nom1">
+                    <ng-container *ngFor="let validation of validation_messages.nomdestinataire">
                       <div class="error-message" style="font-size: small;color: #ea6153;"
-                        *ngIf="validations_form3.get('nom1').hasError(validation.type) && (validations_form3.get('nom1').dirty || validations_form3.get('nom1').touched)">
+                        *ngIf="validations_form3.get('nomdestinataire').hasError(validation.type) && (validations_form3.get('nomdestinataire').dirty || validations_form3.get('nomdestinataire').touched)">
                         {{ validation.message }}
                       </div>
                     </ng-container>
                    </div>
 
                   <ion-item>
-                    <ion-input type="number" placeholder="Numéro de téléphone" formControlName="telephone1" class="form-controll" required></ion-input>
+                    <ion-input type="number" placeholder="Numéro de téléphone" formControlName="destinataire" class="form-controll" required></ion-input>
                   </ion-item>
                   <div class="validation-errors">
-                    <ng-container *ngFor="let validation of validation_messages.telephone1">
+                    <ng-container *ngFor="let validation of validation_messages.destinataire">
                       <div class="error-message" style="font-size: small;color: #ea6153;"
-                        *ngIf="validations_form3.get('telephone1').hasError(validation.type) && (validations_form3.get('telephone1').dirty || validations_form3.get('telephone1').touched)">
+                        *ngIf="validations_form3.get('destinataire').hasError(validation.type) && (validations_form3.get('destinataire').dirty || validations_form3.get('destinataire').touched)">
                         {{ validation.message }}
                       </div>
                     </ng-container>
                    </div>
 
                   <ion-item>
-                    <ion-input type="text" placeholder="Adresse du destinataire" formControlName="adresse1" class="form-controll" required></ion-input>
+                    <ion-input type="text" placeholder="Adresse du destinataire" formControlName="adressedestinataire" class="form-controll" required></ion-input>
                   </ion-item>
                   <!-- <div class="validation-errors">
                     <ng-container *ngFor="let validation of validation_messages.adresse1">
@@ -171,7 +171,7 @@
                   <p>OU</p>
                   <ion-item>
                     <ion-label position="floating">Retirer d'un point relais</ion-label>
-                    <ion-select formControlName="relais2">
+                    <ion-select formControlName="ptrelaisdestination">
                         <ion-select-option value="foire" checked="true">JEGE Foire</ion-select-option>
                         <ion-select-option value="sacre">JEGE Sacré Coeur</ion-select-option>
                         <ion-select-option value="djeuppeul" checked="true">JEGE Djeuppeul</ion-select-option>

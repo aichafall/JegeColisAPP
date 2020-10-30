@@ -32,11 +32,13 @@ export class LivraisonPage implements OnInit {
   getAllColis() {
     //Get saved list of colis
     this.apiService.getList().subscribe(response => {
-      console.log(response);
+     // console.log(response);
       this.colissData = response;
+      console.log(this.colissData);
     })
+    
   }
-
+//var ref = id.slice(-5);
 
   delete(item) {
     //Delete item in Student data
