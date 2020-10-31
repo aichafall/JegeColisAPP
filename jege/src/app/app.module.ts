@@ -9,7 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http"
 import { ServiceWorkerModule } from '@angular/service-worker'
 import { environment } from '../environments/environment'
@@ -26,7 +26,8 @@ import { GoogleMaps } from '@ionic-native/google-maps';
   entryComponents: [],
   imports: [HttpClientModule,
     ServiceWorkerModule.register('/ngsw-worker.js', {scope : './' ,enabled: environment.production }),
-    BrowserModule, IonicModule.forRoot(), AppRoutingModule
+    BrowserModule, IonicModule.forRoot(), AppRoutingModule,ReactiveFormsModule,
+    FormsModule
      //AngularFireModule.initializeApp(config),
     //AngularFirestoreModule
   ],

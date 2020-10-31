@@ -67,7 +67,7 @@ export class RegisterPage implements OnInit {
   
   
 
-  RegisterUser(value) {
+  registerUser(value) {
     this.authService.RegisterUser(value)
       .subscribe(res => {
         console.log(res);

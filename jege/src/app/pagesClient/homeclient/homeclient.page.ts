@@ -47,8 +47,9 @@ export class HomeclientPage {
       header: 'Suivre mon colis',
       inputs: [
         {
-          name: 'Référence du colis',
-          placeholder: 'Référence'
+          name: 'ref',
+          placeholder: 'Référence du colis',
+          
         }
       ],
       buttons: [
@@ -61,9 +62,16 @@ export class HomeclientPage {
           }
         }, {
           text: 'Allons-y!',
-          handler: () => {
+          handler: (alertData) => {
             console.log('Confirm Okay');
-            this.navCtrl.navigateForward("/tracker");
+            console.log(alertData.ref);
+            if(alertData.ref=='JC0b0ad')
+            {this.navCtrl.navigateForward("/tracker");}
+            else if(alertData.ref=='JCa5589')
+            {this.navCtrl.navigateForward("/trackerlivre");}
+            else
+            {this.navCtrl.navigateForward("/trackerattente");}
+            
   
           }
         }

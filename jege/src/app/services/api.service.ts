@@ -72,9 +72,10 @@ export class ApiService {
         catchError(this.handleError)
       )
   }
-  updateUser(id, item): Observable<User> {
+  userid= window.localStorage.getItem('userid');
+  updateUser(userid, item): Observable<User> {
     return this.http
-      .put<User>(this.base_path + '/' + id, JSON.stringify(item), this.httpOptions)
+      .put<User>(this.base_path + '/' + userid, JSON.stringify(item), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)

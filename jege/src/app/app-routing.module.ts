@@ -90,6 +90,10 @@ const routes: Routes = [
     path: 'trackerattente',
     loadChildren: () => import('./pageClient/trackerattente/trackerattente.module').then( m => m.TrackerattentePageModule)
   },
+  {
+    path: 'trackerlivre',
+    loadChildren: () => import('./pageClient/trackerlivre/trackerlivre.module').then( m => m.TrackerlivrePageModule)
+  },
 
 
 

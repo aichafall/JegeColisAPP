@@ -13,13 +13,6 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 export class ModifprofilPage implements OnInit {
 
   id: number;
-  // user: User;
-  // <!-- EXEMPLE à FAIRE PARTOUT -->
-  useremail= window.localStorage.getItem('useremail');
-  // usernom="Aicha FALL";
-  // useradresse="Yoff";
-  // usernum="776554322";
-  // usernom= window.localStorage.getItem('useremail');
   constructor(
     public toastController: ToastController,
     public activatedRoute: ActivatedRoute,
@@ -27,7 +20,7 @@ export class ModifprofilPage implements OnInit {
     public router: Router,
     public apiService: ApiService
   ) {
-  //   this.user = new User();
+
   }
   prenom= window.localStorage.getItem('userprenom');
   nom= window.localStorage.getItem('usernom');
@@ -35,20 +28,23 @@ export class ModifprofilPage implements OnInit {
   adresse= window.localStorage.getItem('useradresse');
   telephone= window.localStorage.getItem('usertel');
   userid= window.localStorage.getItem('userid');
-  async presentToast(userid,value) {
-    this.authService.UpdateUser(userid,value)
+ 
+  
+   async updateUser(value) {
+    this.authService.UpdateUser(value)
       .subscribe(res => {
         console.log(res);
         console.log("modifié");
       })
 
-    const toast = await this.toastController.create({
-      message: 'Vos informations ont été modifiées avec succès.',
-      position: 'top',
-      color: "success",
-      duration: 2000
-    });
-    toast.present();
+      const toast = await this.toastController.create({
+        message: 'Vos informations ont été modifiées avec succès.',
+        position: 'top',
+        color: "success",
+        duration: 2000
+      });
+      toast.present();
+
     this.router.navigate(['profilclient']);
   }
 
@@ -56,14 +52,6 @@ export class ModifprofilPage implements OnInit {
     
   }
 
-  // UpdateUser(userid,value) {
-  //   this.authService.UpdateUser(userid,value)
-  //     .subscribe(res => {
-  //       console.log(res);
-  //       window.localStorage.setItem('userid',res.user._id);
-  //       window.localStorage.setItem('token',res.token);
-  //       window.localStorage.setItem('useremail',res.user.email);
-  //     })
-  // }
+ 
 
 }
